@@ -105,7 +105,7 @@ export function Contact() {
       platformDar: "إنستاغرام",
       platformFr: "Instagram",
       handle: "@allat.prod",
-      url: "https://instagram.com/allat.prod",
+      url: "https://instagram.com/allat.prod/?hl=en",
       coloredLogo: instagramLogo,
       glowColor: "rgba(253, 29, 29, 0.4)",
     },
