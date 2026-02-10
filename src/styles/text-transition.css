@@ -1,0 +1,26 @@
+/* Text-only fade transition for language switching */
+/* Applied ONLY to text nodes, never to containers, backgrounds, or media */
+
+.text-content {
+  transition: opacity 0.15s ease-in-out;
+  opacity: 1;
+}
+
+.text-content.fading {
+  opacity: 0;
+}
+
+/* Ensure these elements are NEVER affected by text transitions */
+.text-transition-container,
+.text-transition-container > div,
+.text-transition-container section,
+.text-transition-container iframe,
+.text-transition-container img,
+.text-transition-container video,
+.text-transition-container canvas,
+.text-transition-container svg,
+.text-transition-container .card,
+.text-transition-container .hero-background {
+  opacity: 1 !important;
+  transition: none !important;
+}

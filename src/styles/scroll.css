@@ -1,0 +1,11 @@
+/* Smooth scrolling with cinematic easing */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Override default smooth scroll with custom timing */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: auto;
+  }
+}

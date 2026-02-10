@@ -1,0 +1,102 @@
+/* Mobile-First Responsive Utilities */
+
+/* Improve touch interactions on mobile */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent text selection on buttons/interactive elements */
+button,
+a[role="button"],
+.cursor-pointer {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* Optimize scrolling performance */
+.scroll-smooth {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Reduce heavy animations on mobile */
+  .perspective-\[2000px\] {
+    perspective: none !important;
+  }
+
+  /* Ensure iframe backgrounds scale properly */
+  iframe {
+    transform: scale(1);
+    object-fit: cover;
+  }
+
+  /* Optimize font rendering on small screens */
+  body {
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Adjust spacing for tablet */
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Large desktop optimizations */
+@media (min-width: 1440px) {
+  /* Constrain max width on very large screens */
+  .max-w-\[1400px\] {
+    max-width: 1400px;
+  }
+}
+
+/* Fix for mobile Safari viewport height */
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Prevent zoom on input focus (iOS) */
+@media (max-width: 768px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Better focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
