@@ -5,11 +5,22 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Cinematic Portfolio Landing Page</title>
-    </head>
+    <style>
+      body { margin: 0; padding: 0; background-color: #000; overflow: hidden; }
+      #root { opacity: 0; transition: opacity 0.5s ease-in; }
+      #root.loaded { opacity: 1; }
+    </style>
+  </head>
 
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Simple fade-in for root once React mounts (optional, but requested "instant" load with pages)
+      // Actually, if we want "loader above everything", we should just keep background black.
+      // The React IntroLoader will take over.
+      // But to avoid "black rectangle before pages", we make the PAGE background black by default.
+    </script>
+  </body>
+</html>
   
