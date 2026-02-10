@@ -6,17 +6,17 @@ export function Footer() {
   const socialLinks = [
     {
       icon: Instagram,
-      href: "https://www.instagram.com/allat.prod",
+      href: "https://www.instagram.com/allat.prod/",
       label: "Instagram",
     },
     {
       icon: MessageCircle,
-      href: "https://wa.me/212123456789",
+      href: "https://wa.me/212697634567",
       label: "WhatsApp",
     },
     {
       icon: Mail,
-      href: "mailto:contact@allatproduction.com",
+      href: "mailto:allatproduction@gmail.com",
       label: "Email",
     },
   ];

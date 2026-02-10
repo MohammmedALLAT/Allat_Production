@@ -99,13 +99,33 @@ export function Contact() {
     };
   }, [logoRef]);
 
+  const handleSocialClick = (platform: string, url: string, e: React.MouseEvent) => {
+    if (platform === "Instagram") {
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 800;
+
+      if (isMobile) {
+        e.preventDefault();
+        const deepLink = "instagram://user?username=allat.prod";
+        const webLink = url;
+
+        // Try opening the deep link
+        window.location.href = deepLink;
+
+        // Fallback to web link if deep link fails (timeout)
+        setTimeout(() => {
+          window.location.href = webLink;
+        }, 1000); // 1000ms fallback timer
+      }
+    }
+  };
+
   const contacts = [
     {
       platform: "Instagram",
       platformDar: "إنستاغرام",
       platformFr: "Instagram",
       handle: "@allat.prod",
-      url: "https://instagram.com/allat.prod/",
+      url: "https://www.instagram.com/allat.prod/",
       coloredLogo: instagramLogo,
       glowColor: "rgba(253, 29, 29, 0.4)",
     },
@@ -394,6 +414,7 @@ export function Contact() {
                   rel="noopener noreferrer"
                   className="contact-card group relative block bg-[#0b0b0b] border border-white/5 rounded-sm p-12 pointer-events-auto overflow-hidden transition-all duration-200 hover:scale-[1.02]"
                   style={{ zIndex: 10 }}
+                  onClick={(e) => handleSocialClick(contact.platform, contact.url, e)}
                 >
                   {/* Content Container */}
                   <div className="relative z-10 flex flex-col items-center text-center">
